@@ -96,6 +96,20 @@ public class Utils
 	
 	public static void main(String[] args) 
 	{
+		try {
+			Utils.readFileDepartamentosAndOnSaveDatabase();
+		} catch (NumberFormatException | IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		DepFacade depFacade=new DepFacade();
+		System.out.println(depFacade.count());
+		try {
+			Utils.readFileMunicipiosAndOnSaveDatabase();
+		} catch (NumberFormatException | IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		MunicipioFacade municipioFacade= new MunicipioFacade();
 		System.out.println(municipioFacade.count());
 	}
