@@ -16,7 +16,7 @@ public class Persona implements Serializable {
 
 	@Id
 	@Column(name = "id" ,nullable = false)
-	private long identificion;
+	private long identificacion;
 	@Column(nullable=false, length=25,name ="Primer_Nombre")
 	private String primerNombre;
 	@Column(nullable=false, length=25,name ="Segundo_Nombre")
@@ -28,15 +28,33 @@ public class Persona implements Serializable {
 	@ManyToOne(targetEntity=Municipio.class)
 	private Municipio municipioNacimiento;
 
+	//Constructores
+	public Persona(long identificion, String primerNombre, String segundoNombre, String primerApellido,
+			String segundoApellido, Municipio municipioNacimiento) 
+	{
+		this.identificacion = identificion;
+		this.primerNombre = primerNombre;
+		this.segundoNombre = segundoNombre;
+		this.primerApellido = primerApellido;
+		this.segundoApellido = segundoApellido;
+		this.municipioNacimiento = municipioNacimiento;
+	}
+
 	public Persona() 
 	{
 		
 	}
+	//Metodos set
+	public void identificacion(long identificacion) 
+	{
+		this.identificacion = identificacion;
+	}
+
 
 	public Persona(long identificion, String primerNombre, String segundoNombre, String primerApellido,
 			String segundoApellido, int codigoMunicipio, int codigoDepartamento) 
 	{
-		this.identificion = identificion;
+		this.identificacion = identificion;
 		this.primerNombre = primerNombre;
 		this.segundoNombre = segundoNombre;
 		this.primerApellido = primerApellido;
@@ -47,28 +65,57 @@ public class Persona implements Serializable {
 	}
 
 	//metodos set
-	public long getIdentificion() {
-		return identificion;
+	public long getIdentificacion() {
+		return identificacion;
 	}
 
-	public String getPrimerNombre() {
+	public String getPrimerNombre() 
+	{
 		return primerNombre;
 	}
 
-	public String getSegundoNombre() {
+	public String getSegundoNombre() 
+	{
 		return segundoNombre;
 	}
 
-	public String getPrimerApellido() {
+	public String getPrimerApellido() 
+	{
 		return primerApellido;
 	}
 
-	public String getSegundoApellido() {
+	public String getSegundoApellido() 
+	{
 		return segundoApellido;
 	}
 
-	public Municipio getMunicipioNacimiento() {
+	public Municipio getMunicipioNacimiento() 
+	{
 		return municipioNacimiento;
 	}
+	public void setPrimerNombre(String primerNombre) 
+	{
+		this.primerNombre = primerNombre;
+	}
 
+	public void setSegundoNombre(String segundoNombre) 
+	{
+		this.segundoNombre = segundoNombre;
+	}
+
+	public void setPrimerApellido(String primerApellido) 
+	{
+		this.primerApellido = primerApellido;
+	}
+
+	public void setSegundoApellido(String segundoApellido) 
+	{
+		this.segundoApellido = segundoApellido;
+	}
+
+	public void setMunicipioNacimiento(Municipio municipioNacimiento) 
+	{
+		this.municipioNacimiento = municipioNacimiento;
+	}
+	
 }
