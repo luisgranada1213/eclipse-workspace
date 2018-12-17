@@ -4,9 +4,9 @@ import java.util.List;
 
 public interface IDto
 {
-	public int insert();
-	public int delete();
-	public int edit();
-	public List findAll();
-	public List findPk();
+	public String insert();
+	public String delete();
+	public String edit();
+	public String findAll();
+	public String findPk();
 }

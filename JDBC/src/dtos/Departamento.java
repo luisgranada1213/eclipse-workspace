@@ -1,6 +1,6 @@
 package dtos;
 
-public class Departamento 
+public class Departamento implements IDto
 {
 	private Short codigo;
 	
@@ -79,6 +79,43 @@ public class Departamento
 	public String toString()
 	{
 		return codigo+","+nombre;
+	}
+
+	@Override
+	public String insert() 
+	{
+		return "INSERT INTO public.departamentos(\n" + 
+				"	codigo_departamento, nombre_deparamento)\n" + 
+				"	VALUES ("+codigo.toString()+ " , '"+ nombre+"' );";
+	}
+
+	@Override
+	public String delete() 
+	{
+		// TODO Auto-generated method stub
+		return "DELETE FROM public.departamentos\n" + 
+				"	WHERE codigo_departamento="+codigo.toString()+";";
+	}
+
+	@Override
+	public String edit() 
+	{
+		// TODO Auto-generated method stub
+		return "UPDATE public.departamentos\n" + 
+				"	SET codigo_departamento="+codigo.toString()+" , nombre_deparamento='"+nombre+"'\n" + 
+				"	WHERE codigo_departamento=" + codigo.toString()+";";
+	}
+
+	@Override
+	public String findAll() {
+		// TODO Auto-generated method stub
+		return "select * from departamentos";
+	}
+
+	@Override
+	public String findPk() 
+	{
+		return "select * from departamentos where codigo_departamento="+codigo.toString();
 	}
 	
 }
