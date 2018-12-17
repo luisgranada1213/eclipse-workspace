@@ -3,6 +3,7 @@
 	<persistence-unit name="Pruebas" transaction-type="RESOURCE_LOCAL">
 		<class>entities.Departamento</class>
 		<class>entities.Municipio</class>
+		<class>entities.Persona</class>
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/postgres"/>
 			<property name="javax.persistence.jdbc.user" value="postgres"/>
