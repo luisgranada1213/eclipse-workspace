@@ -1,5 +1,5 @@
 package dtos;
-
+import java.util.List;
 public class Departamento implements IDto
 {
 	private Short codigo;
@@ -117,5 +117,4 @@ public class Departamento implements IDto
 	{
 		return "select * from departamentos where codigo_departamento="+codigo.toString();
 	}
-	
 }
