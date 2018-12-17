@@ -9,7 +9,7 @@ import javax.persistence.*;
  * 
  */
 @Entity
-@Table(name="Persona")
+@Table(name="Personas")
 @NamedQuery(name="Persona.findAll", query="SELECT p FROM Persona p")
 public class Persona implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -27,6 +27,7 @@ public class Persona implements Serializable {
 	private String segundoApellido;
 	@ManyToOne(targetEntity=Municipio.class)
 	private Municipio municipioNacimiento;
+	private int edad;
 
 	//Constructores
 	public Persona(long identificion, String primerNombre, String segundoNombre, String primerApellido,
@@ -58,7 +59,7 @@ public class Persona implements Serializable {
 		
 	}
 
-	//Metodos get
+	//Metodos GEt
 	public long getIdentificacion() {
 		return identificacion;
 	}
@@ -82,8 +83,12 @@ public class Persona implements Serializable {
 	public Municipio getMunicipioNacimiento() {
 		return municipioNacimiento;
 	}
-	
-	//Metods set
+
+	public int getEdad() {
+		return edad;
+	}
+
+	//Metodos Set
 	public void setIdentificacion(long identificacion) {
 		this.identificacion = identificacion;
 	}
@@ -107,6 +112,12 @@ public class Persona implements Serializable {
 	public void setMunicipioNacimiento(Municipio municipioNacimiento) {
 		this.municipioNacimiento = municipioNacimiento;
 	}
+
+	public void setEdad(int edad) {
+		this.edad = edad;
+	}
+	
+
 	
 	
 }
