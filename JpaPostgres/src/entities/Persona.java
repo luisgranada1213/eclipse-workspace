@@ -40,17 +40,6 @@ public class Persona implements Serializable {
 		this.municipioNacimiento = municipioNacimiento;
 	}
 
-	public Persona() 
-	{
-		
-	}
-	//Metodos set
-	public void identificacion(long identificacion) 
-	{
-		this.identificacion = identificacion;
-	}
-
-
 	public Persona(long identificion, String primerNombre, String segundoNombre, String primerApellido,
 			String segundoApellido, int codigoMunicipio, int codigoDepartamento) 
 	{
@@ -64,58 +53,60 @@ public class Persona implements Serializable {
 		this.municipioNacimiento=m;
 	}
 
-	//metodos set
+	public Persona() 
+	{
+		
+	}
+
+	//Metodos get
 	public long getIdentificacion() {
 		return identificacion;
 	}
 
-	public String getPrimerNombre() 
-	{
+	public String getPrimerNombre() {
 		return primerNombre;
 	}
 
-	public String getSegundoNombre() 
-	{
+	public String getSegundoNombre() {
 		return segundoNombre;
 	}
 
-	public String getPrimerApellido() 
-	{
+	public String getPrimerApellido() {
 		return primerApellido;
 	}
 
-	public String getSegundoApellido() 
-	{
+	public String getSegundoApellido() {
 		return segundoApellido;
 	}
 
-	public Municipio getMunicipioNacimiento() 
-	{
+	public Municipio getMunicipioNacimiento() {
 		return municipioNacimiento;
 	}
-	public void setPrimerNombre(String primerNombre) 
-	{
+	
+	//Metods set
+	public void setIdentificacion(long identificacion) {
+		this.identificacion = identificacion;
+	}
+
+	public void setPrimerNombre(String primerNombre) {
 		this.primerNombre = primerNombre;
 	}
 
-	public void setSegundoNombre(String segundoNombre) 
-	{
+	public void setSegundoNombre(String segundoNombre) {
 		this.segundoNombre = segundoNombre;
 	}
 
-	public void setPrimerApellido(String primerApellido) 
-	{
+	public void setPrimerApellido(String primerApellido) {
 		this.primerApellido = primerApellido;
 	}
 
-	public void setSegundoApellido(String segundoApellido) 
-	{
+	public void setSegundoApellido(String segundoApellido) {
 		this.segundoApellido = segundoApellido;
 	}
 
-	public void setMunicipioNacimiento(Municipio municipioNacimiento) 
-	{
+	public void setMunicipioNacimiento(Municipio municipioNacimiento) {
 		this.municipioNacimiento = municipioNacimiento;
 	}
+	
 	
 }
