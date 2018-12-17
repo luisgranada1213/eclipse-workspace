@@ -1,6 +1,8 @@
 package dtos;
 
-public class Departamento 
+import java.util.List;
+
+public class Departamento implements IDto
 {
 	private Short codigo;
 	
@@ -79,6 +81,36 @@ public class Departamento
 	public String toString()
 	{
 		return codigo+","+nombre;
+	}
+
+	@Override
+	public int insert() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int delete() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int edit() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public List findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List findPk() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }
