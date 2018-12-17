@@ -2,17 +2,16 @@ package mundo;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 
-import entities.Municipio;
+import entities.Persona;
 
-public class MunicipioFacade extends ConsultaGeneral<Municipio>
+public class PersonaFacade extends ConsultaGeneral<Persona> 
 {
 	private EntityManager em;
 
-	public MunicipioFacade() 
+	public PersonaFacade() 
 	{
-		super(Municipio.class);
+		super(Persona.class);
 		em=Database.getEntityManager();
 	}
 

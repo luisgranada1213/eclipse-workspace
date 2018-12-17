@@ -15,37 +15,24 @@ public class Persona implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private Long identificion;
+	@Column(name = "id" ,nullable = false)
+	private long identificion;
+	@Column(nullable=false, length=25,name ="Primer_Nombre")
+	private String primerNombre;
+	@Column(nullable=false, length=25,name ="Segundo_Nombre")
+	private String segundoNombre;
+	@Column(nullable=false, length=25,name ="Primer_Apellido")
+	private String primerApellido;
+	@Column(nullable=false, length=25,name ="Segundo_Apellido")
+	private String segundoApellido;
+	@ManyToOne(targetEntity=Municipio.class)
+	private Municipio municipioNacimiento;
 
-	private String apellido;
-
-	private String nombre;
-
-	public Persona() {
+	public Persona() 
+	{
+		
 	}
 
-	public Long getIdentificion() {
-		return this.identificion;
-	}
-
-	public void setIdentificion(Long identificion) {
-		this.identificion = identificion;
-	}
-
-	public String getApellido() {
-		return this.apellido;
-	}
-
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
-	}
-
-	public String getNombre() {
-		return this.nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
+	
 
 }

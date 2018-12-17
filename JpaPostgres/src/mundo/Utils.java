@@ -2,22 +2,14 @@ package mundo;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-
-import com.sun.org.apache.xalan.internal.xsltc.compiler.sym;
-
 import entities.Departamento;
 import entities.Municipio;
-
 
 public class Utils 
 {
@@ -92,25 +84,5 @@ public class Utils
 			municipioFacade.create(municipio);
 		}
 		br.close();
-	}
-	
-	public static void main(String[] args) 
-	{
-		try {
-			Utils.readFileDepartamentosAndOnSaveDatabase();
-		} catch (NumberFormatException | IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		DepFacade depFacade=new DepFacade();
-		System.out.println(depFacade.count());
-		try {
-			Utils.readFileMunicipiosAndOnSaveDatabase();
-		} catch (NumberFormatException | IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		MunicipioFacade municipioFacade= new MunicipioFacade();
-		System.out.println(municipioFacade.count());
 	}
 }
