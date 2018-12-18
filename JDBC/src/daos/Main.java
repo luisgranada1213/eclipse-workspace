@@ -4,6 +4,7 @@ import java.util.List;
 
 import dtos.Departamento;
 import dtos.Municipio;
+import dtos.Persona;
 
 public class Main {
 
@@ -16,6 +17,9 @@ public class Main {
 		MunicipioDao municipioDao= new MunicipioDao();
 		List<Municipio> listm=municipioDao.findAll();
 		System.out.println(listm.size());
+		PersonaDao personaDao=new PersonaDao();
+		Persona persona= new Persona(2, "ss", "ss", "ss", "ss", 3,23);
+		personaDao.create(persona);
 	}
 
 }
