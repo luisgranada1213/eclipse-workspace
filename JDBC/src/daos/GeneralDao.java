@@ -9,6 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,6 +23,7 @@ public abstract class GeneralDao<T extends IDto>
 	{
 		this.classDto=classDto;
 	}
+	
 	public List<T> findAll()
 	{
 		List<T> result=new ArrayList<>();
@@ -81,15 +83,29 @@ public abstract class GeneralDao<T extends IDto>
 		} 
 		catch (InvocationTargetException e) 
 		{
-			// TODO: handle exception
 			e.printStackTrace();
 		}
-		catch (NoSuchMethodException e) {
-			// TODO: handle exception
+		catch (NoSuchMethodException e) 
+		{
 			e.printStackTrace();
 		}
 		return result;
 	}
 	
-
+	public int create(T entity)
+	{
+		int result = -1;
+		Connection connection=Database.getConnection();
+		try 
+		{
+			Statement statement= connection.createStatement();
+			result=statement.executeUpdate(entity.insert());
+		} 
+		catch (SQLException e) 
+		{
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
 }
